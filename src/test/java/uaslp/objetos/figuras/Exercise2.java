@@ -1,8 +1,8 @@
 package uaslp.objetos.figuras;
 
-import org.junit.Ignore;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,6 +61,7 @@ public class Exercise2 {
         // Then:
         Assertions.assertEquals("2 Lados iguales y 1 diferente", description);
     }
+
     @Test
     public void testListaDeFiguras(){
         // Given:

@@ -1,10 +1,13 @@
 package uaslp.objetos.figuras;
 
+import uaslp.objetos.figuras.exceptions.DatoFaltanteException;
+import uaslp.objetos.figuras.exceptions.NumeroInvalidoDeLados;
+
 import static java.lang.Math.sqrt;
 
 public class PoligonoRegular implements Figura,DrawableItem{
     private int numeroDeLados;
-    private double lado,hipotenusa,ladoChico;
+    private double lado=-1,hipotenusa,ladoChico;
     private double apotema;
     private double area;
     public String getName() {
@@ -12,7 +15,12 @@ public class PoligonoRegular implements Figura,DrawableItem{
     }
 
 
-    public PoligonoRegular(int numeroDeLados) {
+    public PoligonoRegular(int numeroDeLados) throws NumeroInvalidoDeLados {
+
+        if(lado<=4)
+            throw new NumeroInvalidoDeLados("Número de lados válido a partir de 5");
+        if(lado<0)
+            throw new NumeroInvalidoDeLados();
         this.numeroDeLados=numeroDeLados;
     }
 

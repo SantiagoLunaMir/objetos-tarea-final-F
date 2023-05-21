@@ -1,29 +1,35 @@
 package uaslp.objetos.figuras;
 
-public class Cuadrado implements Figura,DrawableItem{
+import uaslp.objetos.figuras.exceptions.DatoFaltanteException;
+import uaslp.objetos.figuras.exceptions.LadoNoProvistoException;
 
-    private double lado;
+public class Cuadrado implements Figura,DrawableItem {
+
+    private double lado=-1;
     private double area;
 
-    public Cuadrado(double lado) {
+    public Cuadrado(double lado){
         this.lado=lado;
     }
 
-    public Cuadrado() {
-
+    public Cuadrado(){
     }
 
     void setLado(double lado){
         this.lado = lado;
     }
-
-    public double getArea() {
-        return area=lado*lado;
-    }
-
     public double getLado() {
         return lado;
     }
+
+    public double getArea() throws LadoNoProvistoException{
+            if (lado < 0) {
+                throw new LadoNoProvistoException();
+            }
+            return area = lado * lado;
+    }
+
+
 
     @Override
     public String getName() {

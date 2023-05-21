@@ -1,11 +1,14 @@
 package uaslp.objetos.figuras;
 
+import uaslp.objetos.figuras.exceptions.AlturaNoProvistaException;
+import uaslp.objetos.figuras.exceptions.BaseNoProvistaException;
+
 public class Triangulo implements Figura,DrawableItem{
     public Triangulo() {
     }
-    private double base;
+    private double base=-1;
     private double area;
-    private double altura;
+    private double altura=-1;
     private String description="Cualquier triangulo";
     public Triangulo(double base, double altura) {
         this.altura=altura;
@@ -28,7 +31,11 @@ public class Triangulo implements Figura,DrawableItem{
         this.altura=altura;
     }
 
-    public double getArea() {
+    public double getArea() throws BaseNoProvistaException, AlturaNoProvistaException {
+        if(base<0)
+            throw new BaseNoProvistaException();
+        if(altura<0)
+            throw new AlturaNoProvistaException();
         return area=(base*altura)/2;
     }
 
