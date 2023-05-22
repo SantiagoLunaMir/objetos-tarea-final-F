@@ -1,6 +1,6 @@
 package uaslp.objetos.figuras.exceptions;
 
-public class NumeroInvalidoDeLados extends Exception{
+public class NumeroInvalidoDeLados extends RuntimeException{
     private String message;
     public NumeroInvalidoDeLados(String message){
         super(message);

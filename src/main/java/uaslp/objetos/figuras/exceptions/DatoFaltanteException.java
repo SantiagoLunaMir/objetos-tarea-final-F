@@ -1,4 +1,4 @@
 package uaslp.objetos.figuras.exceptions;
 
-public class DatoFaltanteException extends Exception{
+public class DatoFaltanteException extends RuntimeException{
 }

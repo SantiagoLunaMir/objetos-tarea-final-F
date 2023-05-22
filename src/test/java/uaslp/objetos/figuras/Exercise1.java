@@ -2,6 +2,7 @@ package uaslp.objetos.figuras;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import uaslp.objetos.figuras.exceptions.NumeroInvalidoDeLados;
 
 public class Exercise1 {
 
@@ -74,7 +75,7 @@ public class Exercise1 {
     }
 
     @Test
-    public void testPoligono(){
+    public void testPoligono() {
         // Given:
         double lado = 10;
         int numeroDeLados = 6;
