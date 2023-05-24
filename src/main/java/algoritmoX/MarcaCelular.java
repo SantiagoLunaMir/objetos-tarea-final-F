@@ -2,8 +2,9 @@ package algoritmoX;
 
 public class MarcaCelular implements Dependencia1{
     private String nombre;
+    public MarcaCelular(){}
 
-    public MarcaCelular(String nombre) {
+    public void setMarca(String nombre) {
         this.nombre = nombre;
     }
 

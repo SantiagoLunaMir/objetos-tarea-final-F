@@ -34,26 +34,35 @@ public class Exercise6 {
         assertThat(Dependencia3.class).isInterface();
     }
     @Test
-    public void testQueVerificaelFuncionamientoGeneral(){
+    public void validarlacorrectaAgregaciondeContactosyNumeros(){
         // Given:
         Contactos contactos = new Contactos();
+        NumeroTelefonico numero1 = new NumeroTelefonico();
+        NumeroTelefonico numero2 = new NumeroTelefonico();
         // When:
-        MarcaCelular marca1 = new MarcaCelular("Samsung");
-        MarcaCelular marca2 = new MarcaCelular("Apple");
-
-        NumeroTelefonico numero1 = new NumeroTelefonico(123456789);
-        NumeroTelefonico numero2 = new NumeroTelefonico(987654321);
+        numero1.setNumero(123456789);
+        numero2.setNumero(987654321);
 
         contactos.agregarContacto(numero1, "Juan");
         contactos.agregarContacto(numero2, "Maria");
         // Then:
-        assertThat(marca1.getNombre()).isEqualTo("Samsung");
-        assertThat(marca2.getNombre()).isEqualTo("Apple");
 
         assertThat(numero1.getNumero()).isEqualTo(123456789);
         assertThat(numero2.getNumero()).isEqualTo(987654321);
 
         assertThat(contactos.obtenerContacto(numero1)).isEqualTo("Juan");
         assertThat(contactos.obtenerContacto(numero2)).isEqualTo("Maria");
+    }
+    @Test
+    public void validarlacorrectaAgregaciondeMarcas(){
+        // Given:
+        MarcaCelular marca1 = new MarcaCelular();
+        MarcaCelular marca2 = new MarcaCelular();
+        // When:
+        marca1.setMarca("Samsung");
+        marca2.setMarca("Apple");
+        // Then:
+        assertThat(marca1.getNombre()).isEqualTo("Samsung");
+        assertThat(marca2.getNombre()).isEqualTo("Apple");
     }
 }
