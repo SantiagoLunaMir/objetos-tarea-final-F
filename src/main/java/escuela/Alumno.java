@@ -33,38 +33,38 @@ public class Alumno {
     public LocalDate getFechaNacimiento() {
         return fechaNacimiento;
     }
-    public static Builder builder() {
-        return new Builder();
+    public static AlumnoBuilder builder() {
+        return new AlumnoBuilder();
     }
 
-    public static class Builder {
+    public static class AlumnoBuilder {
         private Alumno alumno;
 
-        private Builder() {
+        private AlumnoBuilder() {
             alumno = new Alumno();
         }
 
-        public Builder nombre(String nombre) {
+        public AlumnoBuilder nombre(String nombre) {
             alumno.nombre = nombre;
             return this;
         }
 
-        public Builder clave(String clave) {
+        public AlumnoBuilder clave(String clave) {
             alumno.clave = clave;
             return this;
         }
 
-        public Builder claveDeCarrera(String claveDeCarrera) {
+        public AlumnoBuilder claveDeCarrera(String claveDeCarrera) {
             alumno.claveDeCarrera = claveDeCarrera;
             return this;
         }
 
-        public Builder anioDeIngreso(int anioDeIngreso) {
+        public AlumnoBuilder anioDeIngreso(int anioDeIngreso) {
             alumno.anioDeIngreso = anioDeIngreso;
             return this;
         }
 
-        public Builder fechaNacimiento(LocalDate fechaNacimiento) {
+        public AlumnoBuilder fechaNacimiento(LocalDate fechaNacimiento) {
             alumno.fechaNacimiento = fechaNacimiento;
             return this;
         }
